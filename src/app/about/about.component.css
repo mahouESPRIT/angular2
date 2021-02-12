@@ -1,0 +1,38 @@
+#about {
+    background-color: #1abc9c;
+    color: white;
+}
+#about h1{
+    font-size: 48px;
+}
+#about .row p{
+    font-size: 22px;
+    text-align: left;
+    max-width: 400px;
+    margin: auto;
+}
+.af-b4 {
+    max-width: 400px;
+    margin: auto;
+     color: white;
+}
+
+.af-b4::after{
+    content: "";
+    width: 120px;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+}
+.af-b4::before{
+    content: "";
+    width: 120px;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    
+}

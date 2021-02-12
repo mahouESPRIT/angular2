@@ -1,0 +1,34 @@
+<nav id="#navBar1" class="navbar navbar-expand-sm navbar-dark my-bg fixed-top ">
+    <div class="container">
+        <a class="navbar-brand" routerLink="home">START ANGULAR</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a *ngIf="!test" class="nav-link" routerLink="home" routerLinkActive="active2">Home</a>
+                    <a *ngIf="test" class="nav-link" routerLink="home" routerLinkActive="activated">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="!test" class="nav-link" routerLink="port" routerLinkActive="active2">port</a>
+                    <a *ngIf="test" class="nav-link" routerLink="port" routerLinkActive="activated">port</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="!test" class="nav-link" routerLink="about" routerLinkActive="active2">about</a>
+                    <a *ngIf="test" class="nav-link" routerLink="about" routerLinkActive="activated">about</a>
+                </li>
+                <li class="nav-item">
+
+                    <a *ngIf="!test" class="nav-link" routerLink="contact" routerLinkActive="active2">contact</a>
+
+                    <a *ngIf="test" class="nav-link" routerLink="contact" routerLinkActive="activated">contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+</nav>
