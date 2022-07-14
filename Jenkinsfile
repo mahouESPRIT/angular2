@@ -31,5 +31,10 @@ pipeline {
         }
        }
   }
+    stage("Push Image to Docker Hub"){
+      steps {
+       sh 'docker push  ayoubmahou/esprit:latest'
+    }
+    }
 }
 }
