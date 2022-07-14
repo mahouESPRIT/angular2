@@ -19,5 +19,11 @@ pipeline {
         sh 'npm run build --prod'
       }
     }
+    stage('Archive') {
+      steps {
+        sh 'tar -cvzf dist.tar.gz --strip-components=1 dist'
+        archive 'dist.tar.gz'
+    }
+    }
   }
 }
