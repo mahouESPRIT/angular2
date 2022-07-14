@@ -7,9 +7,7 @@ node {
              sh "npm install"
       }
       stage("Build"){
-             sh "npm run build:ssr"
+             sh "npm run build --prod"
       }
-      stage("Deploy"){
-             sh "pm2 restart all"
-      }
+      
 }
