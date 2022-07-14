@@ -1,15 +1,11 @@
 pipeline {
-
-    stages {
-          
+    stages { 
         stage("Git Clone"){
-         git credentialsId: 'git_hub_cred', url: 'https://github.com/mahouESPRIT/spring-jenkins-test.git'
+            git credentialsId: 'git-cred', url: 'https://github.com/mahouESPRIT/angular2.git'
            }
-    
-        stage('Build') {
-            steps {
+      stage('Build'){
                 sh 'npm install'
-            }
+            
         }    
-}
+    }
 }
