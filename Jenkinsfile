@@ -25,10 +25,10 @@ pipeline {
         sh 'docker build -t esprit .'
         sh 'docker image list'
         sh 'docker tag esprit ayoubmahou/esprit:latest'
-        }
+        
         withCredentials([string(credentialsId: 'docker-cred', variable: 'PASSWORD')]) {
             sh 'docker login -u ayoubmahou -p $PASSWORD'
         }
-         }
+       }
   }
 }
