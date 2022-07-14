@@ -1,9 +1,8 @@
 pipeline {
     agent {
-        docker {
-            image 'node:lts-buster-slim'
-            args '-p 3000:3000'
-        }
+         stage("Git Clone"){
+        git credentialsId: 'git_hub_cred', url: 'https://github.com/mahouESPRIT/spring-jenkins-test.git'
+    }  
     }
     stages {
         stage('Build') {
