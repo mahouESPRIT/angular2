@@ -40,7 +40,7 @@ node {
           milestone()
           sh 'ng build --prod --aot --sm --progress=false'
       }
-    }
+    
     //end docker
 
     stage('Archive') {
