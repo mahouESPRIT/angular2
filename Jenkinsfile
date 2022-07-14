@@ -19,10 +19,9 @@ node {
     }
 
     
-      stage('NPM Install') {
-          withEnv(["NPM_CONFIG_LOGLEVEL=warn"]) {
+      stage('NPM Install') {    
               sh 'npm install'
-          }
+     
       }
 
       stage('Test') {
