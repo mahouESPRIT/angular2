@@ -4,9 +4,12 @@ pipeline {
   tools {nodejs "NodeJSinstaller"}
 
   stages {
-    stage('Example') {
+    stage('Checkout SCM') {
+      git branch : 'main', url:'https://github.com/mahouESPRIT/angular2.git'
+    }
+    stage('Install node modules') {
       steps {
-        sh 'npm config ls'
+        sh 'npm install'
       }
     }
   }
