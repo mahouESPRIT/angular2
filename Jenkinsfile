@@ -1,14 +1,13 @@
-node {
+pipeline {
+  agent any
+
   tools {nodejs "NodeJSinstaller"}
-      stage('Checkout SCM'){
-           git branch : 'main', url:'https://github.com/mahouESPRIT/angular2.git'
+
+  stages {
+    stage('Example') {
+      steps {
+        sh 'npm config ls'
       }
-      
-      stage('Install node modules'){
-             sh "npm install"
-      }
-      stage("Build"){
-             sh "npm run build --prod"
-      }
-      
+    }
+  }
 }
