@@ -18,7 +18,7 @@ node {
         checkout scm
     }
 
-    docker.image('ayoubmahou/angular:latest').inside {
+    
       stage('NPM Install') {
           withEnv(["NPM_CONFIG_LOGLEVEL=warn"]) {
               sh 'npm install'
@@ -48,4 +48,4 @@ node {
         archive 'dist.tar.gz'
     }
 }
-}
+
