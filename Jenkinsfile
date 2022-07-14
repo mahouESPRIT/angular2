@@ -47,3 +47,4 @@ node {
         sh 'tar -cvzf dist.tar.gz --strip-components=1 dist'
         archive 'dist.tar.gz'
     }
+}
