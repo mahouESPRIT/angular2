@@ -1,17 +1,15 @@
-
 node {
-    stage('Checkout') {
-        checkout scm
-    }
-    stage('Build') {
-            sh 'npm install'
-            sh 'ng build --progress false --prod --aot'
-            sh 'tar -cvzf dist.tar.gz --strip-components=1 dist'
-        
-        archive 'dist.tar.gz'
-    }
-    stage('Test') {
-            sh 'ng test --progress false --watch false'
-        }
-    
+      stage('Checkout SCM'){
+           git branch : 'main', url:'https://github.com/mahouESPRIT/angular2.git'
+      }
+      
+      stage('Install node modules'){
+             sh "npm install"
+      }
+      stage("Build"){
+             sh "npm run build:ssr"
+      }
+      stage("Deploy"){
+             sh "pm2 restart all"
+      }
 }
