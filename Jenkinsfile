@@ -39,7 +39,7 @@ pipeline {
      stage('Deploying App to Kubernetes') {
        steps {
         script {
-          kubernetesDeploy(configs: "/home/ayoub/Desktop/Simple-Angular-project/deploy.yaml", kubeconfigId: "kubernetes")
+          kubernetesDeploy(configs: "deploy.yaml", kubeconfigId: "kubernetes")
       }
     }
      }
