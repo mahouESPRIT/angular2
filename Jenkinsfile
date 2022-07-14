@@ -1,5 +1,5 @@
 node {
-  tools {nodejs "nodejs"}
+  tools {nodejs "NodeJSinstaller"}
       stage('Checkout SCM'){
            git branch : 'main', url:'https://github.com/mahouESPRIT/angular2.git'
       }
