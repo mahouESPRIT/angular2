@@ -18,7 +18,7 @@ node {
         checkout scm
     }
 
-    docker.image('trion/ng-cli-karma:1.2.1').inside {
+    docker.image('ayoubmahou/angular:latest').inside {
       stage('NPM Install') {
           withEnv(["NPM_CONFIG_LOGLEVEL=warn"]) {
               sh 'npm install'
@@ -47,4 +47,5 @@ node {
         sh 'tar -cvzf dist.tar.gz --strip-components=1 dist'
         archive 'dist.tar.gz'
     }
+}
 }
