@@ -38,12 +38,11 @@ pipeline {
     }
      stage('Deploying App to Kubernetes') {
        steps {
-          withKubeConfig([credentialsId: 'kubernetes']) {
-          sh 'cat deploy.yaml | sed "s/{{BUILD_NUMBER}}/$BUILD_NUMBER/g" | kubectl apply -f -'
-          sh 'kubectl apply -f deploy.yaml'
-        }
-      }
-  }
+            withKubeConfig([credentialsId: 'kubernetes', serverUrl: 'https://192.168.59.101:8443']) {
+                sh 'kubectl apply -f deploy.yaml'
+                }
+                }
+                }
         
 }
 }
