@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-app
+  name: adactim-app
   labels:
-    app: frontend-app
+    app: adactim-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: frontend-app
-      app: frontend-app
+      name: adactim-app
+      app: adactim-app
   template:
     metadata:
-      name: frontend-app
+      name: adactim-app
       labels:
-        name: frontend-app
-        app: frontend-app
+        name: adactim-app
+        app: adactim-app
 
     spec:
       containers:
@@ -28,15 +28,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-app
+  name: adactim-app
   labels:
-    name: frontend-app
-    app: frontend-app
+    name: adactim-app
+    app: adactim-app
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
   selector:
-    name: frontend-app
-    app: frontend-app
+    name: adactim-app
+    app: adactim-app
