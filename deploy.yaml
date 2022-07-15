@@ -19,8 +19,8 @@ spec:
 
     spec:
       containers:
-      - name: angulara2
-        image: ayoubmahou/angulara2:latest
+      - name: esprit
+        image: ayoubmahou/esprit:latest
      
         ports:
          - containerPort: 80
