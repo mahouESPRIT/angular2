@@ -38,9 +38,12 @@ pipeline {
     }
      stage('Deploying App to Kubernetes') {
        steps {
-        script {
-          kubernetesDeploy(configs: "deploy.yaml", kubeconfigId: "kubernetes")
-      }
+        withCredentials([
+            string(credentialsId: 'kubernetes', variable: 'api_token')
+            ]) {
+             sh 'kubectl --token $api_token --server https://192.168.59.101:8443 --insecure-skip-tls-verify=true apply -f deploy.yaml '
+               }
+            
     }
      }
 }
